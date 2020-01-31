@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Esport mainpage</h1>
+
+  <p>Welcome to <em>war3 Esport</em>, a very basic Django website developed as a tutorial example</p>
+
+<h2>Dynamic content</h2>
+
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Orgs:</strong> {{ num_organisations }}</li>
+    <li><strong>Undead players:</strong> {{ num_undead_players }}</li>
+    <li><strong>NE players:</strong> {{ num_ne_players }}</li>
+    <li><strong>Human players:</strong> {{ num_human_players }}</li>
+    <li><strong>Orc players:</strong> {{ num_orc_players }}</li>
+  </ul>
+{% endblock %}
