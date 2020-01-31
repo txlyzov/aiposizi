@@ -8,6 +8,7 @@ from .models import Player
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^players/$', views.PlayerListView.as_view(), name='players'),
+    url(r'^player/(?P<pk>\d+)$', views.PlayerDetailView.as_view(), name='player-detail'),
 ]
 
 

@@ -32,3 +32,7 @@ def index(request):
 
 class PlayerListView(generic.ListView):
     model = Player
+
+
+class PlayerDetailView(generic.DetailView):
+    model = Player
