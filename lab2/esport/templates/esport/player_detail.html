@@ -10,3 +10,12 @@
     <p><strong>Team:</strong> <a href="">{{ player.team }}</a></p>
 
 {% endblock %}
+
+{% block sidebar %}
+    {{ block.super }}
+      <ul class="sidebar-nav">
+
+          <li><a href="{% url 'player-update' player.id %}">Update player</a></li>
+          <li><a href="{% url 'player-delete' player.id %}">Delete player</a></li>
+      </ul>
+{% endblock %}

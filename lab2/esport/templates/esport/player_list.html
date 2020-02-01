@@ -10,10 +10,18 @@
       <li>
         <a href="{{ player.get_absolute_url }}">{{ player.nickname }}</a> ({{player.name}})
       </li>
+
       {% endfor %}
 
     </ul>
     {% else %}
       <p>There are no players.</p>
-    {% endif %}       
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ block.super }}
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'player-create' %}">Create player</a></li>
+      </ul>
 {% endblock %}
