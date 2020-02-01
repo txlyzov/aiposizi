@@ -1,5 +1,7 @@
 from django.shortcuts import render
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Player
 # Create your views here.
 from django.views import generic
 
@@ -36,3 +38,18 @@ class PlayerListView(generic.ListView):
 
 class PlayerDetailView(generic.DetailView):
     model = Player
+
+
+class PlayerCreate(CreateView):
+    model = Player
+    fields = ['nickname','name','birth', 'country']
+
+
+class PlayerUpdate(UpdateView):
+    model = Player
+    fields = ['nickname', 'race', 'team']
+
+
+class PlayerDelete(DeleteView):
+    model = Player
+    success_url = reverse_lazy('players')
