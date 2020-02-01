@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Organization: {{ organization.name }}</h1>
+
+    <p><strong>Date of creation:</strong> {{ organization.created }}</p>
+    <p><strong>Location:</strong> {{ organization.location }}</p>
+
+{% endblock %}
