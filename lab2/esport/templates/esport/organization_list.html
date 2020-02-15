@@ -17,3 +17,11 @@
       <p>There are no organizations.</p>
     {% endif %}
 {% endblock %}
+
+
+{% block sidebar %}
+    {{ block.super }}
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'organization-create' %}">Create organization</a></li>
+      </ul>
+{% endblock %}

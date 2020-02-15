@@ -40,6 +40,23 @@ class PlayerDetailView(generic.DetailView):
     model = Player
 
 
+class PlayerCreate(CreateView):
+    model = Player
+    fields = ['nickname', 'name', 'birth', 'country']
+    template_name_suffix = '_create'
+
+
+class PlayerUpdate(UpdateView):
+    model = Player
+    fields = ['nickname', 'race', 'team']
+    template_name_suffix = '_update'
+
+
+class PlayerDelete(DeleteView):
+    model = Player
+    success_url = reverse_lazy('players')
+
+
 class OrganizationListView(generic.ListView):
     model = Organization
 
@@ -48,16 +65,18 @@ class OrganizationDetailView(generic.DetailView):
     model = Organization
 
 
-class PlayerCreate(CreateView):
-    model = Player
-    fields = ['nickname','name','birth', 'country']
+class OrganizationCreate(CreateView):
+    model = Organization
+    fields = ['name', 'created', 'location']
+    template_name_suffix = '_create'
 
 
-class PlayerUpdate(UpdateView):
-    model = Player
-    fields = ['nickname', 'race', 'team']
+class OrganizationUpdate(UpdateView):
+    model = Organization
+    fields = ['name', 'location']
+    template_name_suffix = '_update'
 
 
-class PlayerDelete(DeleteView):
-    model = Player
-    success_url = reverse_lazy('players')
+class OrganizationDelete(DeleteView):
+    model = Organization
+    success_url = reverse_lazy('organizations')

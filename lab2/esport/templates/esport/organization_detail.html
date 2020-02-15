@@ -7,3 +7,12 @@
     <p><strong>Location:</strong> {{ organization.location }}</p>
 
 {% endblock %}
+
+{% block sidebar %}
+    {{ block.super }}
+      <ul class="sidebar-nav">
+
+          <li><a href="{% url 'organization-update' organization.id %}">Update organization</a></li>
+          <li><a href="{% url 'organization-delete' organization.id %}">Delete organization</a></li>
+      </ul>
+{% endblock %}
